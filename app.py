@@ -44,9 +44,9 @@ def check():
             .create(to=full_phone, code=code)
 
         if r.status == "approved":
-            return jsonify(success=True, message="Valid token.")
+            return jsonify(success=True, message="Token verified.")
         else:
-            return jsonify(success=False, message="Invalid token.")
+            return jsonify(success=False, message="Token not verified.")
     except Exception as e:
         return jsonify(success=False, message="Error checking verification: {}".format(e))
 
