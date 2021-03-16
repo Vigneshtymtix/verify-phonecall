@@ -22,7 +22,7 @@ def start():
         r = client.verify \
             .services(SERVICE) \
             .verifications \
-            .create(to=full_phone, channel='sms')
+            .create(to=full_phone, channel='voice')
         return jsonify(success=True, message="Verification sent to {}".format(r.to))
     except Exception as e:
         return jsonify(success=False, message="Error sending verification: {}".format(e))
